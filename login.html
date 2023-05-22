@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>login</title>
+</head>
+<body>
+    <div id="wrapper">
+        <form action="" id="form-login">
+            <h1 class="form-heading">Login</h1>
+            <div class="formgroup">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" class="form-input" 
+                placeholder="Username" id="user"> 
+            </div>
+            <div class="formgroup">
+                <i class="fa-solid fa-key"></i>
+                <input type="password" class="form-input" 
+                placeholder="Password"
+                id="matkhau"> 
+            </div>
+            <input type="submit" value="Log in" class="form-submit">
+        </form>
+    </div>
+    <script type="text/javascript">
+        if (localStorage.getItem('isLogin') === 'true') window.location.href = "./mm300.html";
+        function validate() {
+            let user=document.getElementById('user').
+            value;
+            let matkhau= document.getElementById('matkhau').
+            value;
+            if(user=='admin' && matkhau=='123')
+            {
+                localStorage.setItem('isLogin', 'true')
+                window.location.href = "./mm300.html";
+            }
+            else { alert('Đăng Nhập Không Thành Công')};
+        }
+        let loginForm = document.getElementById("form-login");
+        loginForm.addEventListener('submit', e => {
+            e.preventDefault()
+            validate()
+        })
+    </script>
+</body>

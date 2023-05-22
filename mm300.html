@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="stylesheet" href="css/reset.css"> 
+  <link rel="stylesheet" href="css/menu.css">
+  <title>MM300</title>
+</head>
+<body>
+  <div class="container-fluid p-0">
+    <div class="d-flex justify-content-center" style="width: 1536px; height: 160px; right: 100%; background-color: #66CCFF;">
+      <div class="row p-2 pt-5" style="width: 1536px; border-bottom: 5px solid black;">
+        <div class="col-6 d-flex justify-content-center">
+          <img src="./src/img/logo.png"  alt="..." height="100px" width="500px">
+        </div>
+        <div class="col-6 d-flex justify-content-center">
+          <img src="./src/img/background.png"  alt="..." height="100px" width="425px" margin=>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="wrapper">
+  <div id="header">
+  <nav class="container">
+      <a href="" id="logo">
+        <img src="src/img/GE-Logo.png" style="position: relative; left: -160px;" alt="GE">
+      </a>
+      <ul id="main-menu">
+        <li><a href="./mm300.html">
+            <i class="fa-solid fa-house"></i>
+            Trang chủ</a></li>
+            <li><a href="./gioithieu.html">
+              <i class="fa-solid fa-info"></i>  
+                 Giới Thiệu</a></li>
+        <li><a href="https://docs.google.com/document/d/1xZgs5Yjs0saMrCaEvKfz5hjV67-RL7eyGbhirGVcuYg/edit?usp=sharing">
+          <i class="fa-solid fa-computer"></i> 
+             Phần Mềm</a></li>
+        <li><a href="">
+            <i class="fa-solid fa-file"></i>
+            Tài Liệu Tham Khảo</a>
+            <ul class="sub-menu">
+                <li><a href="https://drive.google.com/drive/folders/1VMWB1U5kjhCBcvYDvER9QG5eD8O8YKyg?usp=share_link">
+                    MM300 Motor Manager</a></li>
+                <li><a href="https://drive.google.com/drive/folders/1ZptReMeXDHBwDdLwmFLw8zR0dVDjL4Tg?usp=sharing">Module ESP32, TTL To RS485</a></li>
+            </ul>
+        </li>
+        
+    </ul>
+  </nav>
+  </div>
+</div>
+    <div class="d-flex justify-content-center align-items-center mt-4">
+      <div class="me-5">
+        <div>
+          <button 
+            type="button" 
+            class="btn btn-dark btn-md"
+            style="width: 280px; height: 60px;"
+            onclick="window.location.href='./bang2.html'"
+            >
+            <i class="fa-solid fa-desktop"></i>
+            Thông Số Giám Sát
+            
+          </button>
+        </div>
+        <div>
+          <button 
+            type="button" 
+            class="btn btn-dark btn-md mt-4"
+            style="width: 280px; height: 60px;"
+            onclick="window.location.href='./dothi.html'"
+          >
+          <i class="fa-solid fa-wave-square"></i>
+            Đồ Thị Giám Sát
+          </button>
+        </div>
+        <div>
+          <button 
+            type="button" 
+            class="btn btn-dark btn-md mt-4"
+            style="width: 280px; height: 60px;"
+            onclick="window.location.href='./dieukhiendongco.html'" 
+         
+          >
+          <i class="fa-solid fa-gears"></i>
+            Điểu Khiển Động Cơ
+          </button>
+        </div>
+      </div>
+      <div class="ms-5">
+        <img src="./src/img/trang1-removebg-preview.png" class="img-fluid" height="150px" width="550px" alt="MM300 - GE Motor Protection System">
+      </div>
+    </div>
+  </div>
+  <div class="wrap">
+    <button 
+      id="btnLogout"
+      class="button"
+      ><strong>Đăng xuất</strong></button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script refer type="text/javascript">
+    var buttonLogout = document.getElementById('btnLogout')
+    buttonLogout.addEventListener('click', () => {
+      localStorage.removeItem('isLogin')
+      window.location.href='./login.html'
+    })
+  </script>
+</html>
