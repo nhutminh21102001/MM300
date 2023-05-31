@@ -18,9 +18,11 @@
     var btn_auto= document.getElementById("flexRadioDefault1");
     var btn_manual= document.getElementById("flexRadioDefault2");
 
-    database.ref("/Auto").on("value", function (snapshot) {
-    var auto= snapshot.val();
-    if(auto == "1" ){
+    database.ref("/AutoManual").on("value", function (snapshot) {
+
+    var AutoManual= snapshot.val();
+    if( AutoManual== "1"){
+      btn_auto.checked = true
     btn_on.onclick=function(){
       console.log("On")
         const data = {
@@ -37,38 +39,30 @@
         }
         database.ref().update(data)
     }
-  } else {btn_on.onclick=function(){ alert('Vui lòng chuyển sang chế độ Auto')}
-          btn_off.onclick=function(){ alert('Vui lòng chuyển sang chế độ Auto')} } });
+  } else {
+      btn_manual.checked = true
+      btn_on.onclick=function(){ alert('Vui lòng chuyển sang chế độ Auto')}
+      btn_off.onclick=function(){ alert('Vui lòng chuyển sang chế độ Auto')} 
+    
+    } });
 
     btn_auto.onclick=function(){
       console.log("On")
         const data = {
-          Auto: 1,
-          Manual: 0
+            AutoManual:1
         }
         database.ref().update(data)
     }
     btn_manual.onclick=function(){
       console.log("On")
         const data = {
-          Auto: 0,
-          Manual: 1
+          AutoManual:0
         }
         database.ref().update(data)
     }
-  onload=function(){
-    console.log("On")
-        const data = {
-          Auto: 0,
-          Manual: 1
-        }
-        database.ref().update(data)
-  }
 
-    
     database.ref("/Start").on("value", function (snapshot) {
       var start= snapshot.val();
-      
       if(start=="1"){
           document.getElementById("running").src = "./src/img/xanh_sáng-removebg-preview.png"}
       else document.getElementById("running").src = "./src/img/tắt-removebg-preview.png"
@@ -86,7 +80,21 @@
         document.getElementById("hinh_stop").src = "./src/img/anh_stop.png"}
     else document.getElementById("hinh_stop").src = "./src/img/anh_start.png"
  });
-   
+
+  database.ref("/trangthai").on("value", function (snapshot) {
+    var trangthai= snapshot.val();
+      if(trangthai=="128" || trangthai=="136")
+      {
+        document.getElementById("hinh_stop").src = "./src/img/anh_stop.png"
+        document.getElementById("stopped").src = "./src/img/tắt_chinsua-removebg-preview.png"
+        document.getElementById("running").src = "./src/img/tắt-removebg-preview.png"
+      }
+      else {document.getElementById("hinh_stop").src = "./src/img/anh_start.png"
+      document.getElementById("running").src = "./src/img/xanh_sáng-removebg-preview.png"
+      document.getElementById("stopped").src = "./src/img/tắt-removebg-preview.png"
+    }
+});
+
    database.ref("/Motorload").on("value", function (snapshot) {
     var motorload = snapshot.val();
     document.getElementById("motorload").innerHTML=motorload;
@@ -102,7 +110,7 @@ database.ref("/line").on("value", function (snapshot) {
   document.getElementById("line").innerHTML=line;
 });
 
-database.ref("/PowerFactor").on("value", function (snapshot) {
+database.ref("/Power Factor").on("value", function (snapshot) {
   var factor = snapshot.val();
   document.getElementById("factor").innerHTML=factor;
 });
