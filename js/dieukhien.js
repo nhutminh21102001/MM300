@@ -110,7 +110,7 @@ database.ref("/line").on("value", function (snapshot) {
   document.getElementById("line").innerHTML=line;
 });
 
-database.ref("/PowerFactor").on("value", function (snapshot) {
+database.ref("/Powerfactor").on("value", function (snapshot) {
   var factor = snapshot.val();
   document.getElementById("factor").innerHTML=factor;
 });
