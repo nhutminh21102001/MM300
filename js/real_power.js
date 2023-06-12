@@ -1,6 +1,5 @@
 const SECOND_TO_DRAW = 2 // tính là giây
 const MAX_COLUMN_SHOW = 20 // số cột thời gian hiển thị
-
 // ------------------------------------------------------------
 var dataLocalR = []
 const firebaseConfig = {
