@@ -63,7 +63,7 @@ database.ref("/Van").on("value", function (snapshot) {
    document.getElementById("van").innerHTML=van;
 });
 
-database.ref("/RealPower").on("value", function (snapshot) {
+database.ref("/Realpower").on("value", function (snapshot) {
    var real_power = snapshot.val();
    document.getElementById("real_power").innerHTML=real_power;
 });
