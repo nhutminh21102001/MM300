@@ -109,7 +109,6 @@ database.ref("/line").on("value", function (snapshot) {
   var line = snapshot.val();
   document.getElementById("line").innerHTML=line;
 });
-
 database.ref("/Powerfactor").on("value", function (snapshot) {
   var factor = snapshot.val();
   document.getElementById("factor").innerHTML=factor;
