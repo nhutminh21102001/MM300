@@ -68,7 +68,7 @@ database.ref("/Realpower").on("value", function (snapshot) {
    document.getElementById("real_power").innerHTML=real_power;
 });
 
-database.ref("/PowerFactor").on("value", function (snapshot) {
+database.ref("/Powerfactor").on("value", function (snapshot) {
    var power_factor = snapshot.val();
    document.getElementById("power_factor").innerHTML=power_factor;
 });
