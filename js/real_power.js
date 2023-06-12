@@ -22,7 +22,7 @@ const initChart = () => {
   let dataR = {
     labels: [],
     datasets: [{
-      label: 'RealPower',
+      label: 'Realpower',
       data: [],
       fill: false,
       borderColor: '#800000',
@@ -43,7 +43,7 @@ const updateChart = (dataRealtime) => {
     const date = new Date(item.time)
     return (
       {
-        value: item.RealPower,
+        value: item.Realpower,
         date: `0${date.getHours()}`.slice(-2) + ':' + `0${date.getMinutes()}`.slice(-2) + ":" + `0${date.getSeconds()}`.slice(-2)
       }
     )
