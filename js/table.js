@@ -46,20 +46,14 @@ firestore.collection("data")
       tbodyContent += `
       <tr>
         <th scope="row">${index + 1}</th>
-        <td scope="col">${item.AutoManual}</td>
-        <td scope="col">${item.GTTS}</td> 
-        <td scope="col">${item.GiamToc}</td>
         <td scope="col">${item.GiatriTanSo}</td>
-        <td scope="col">${item.Start}</td>
-        <td scope="col">${item.Stop}</td>
-        <td scope="col">${item.TangToc}</td>
         <td scope="col">${item.dienapbientan}</td>
         <td scope="col">${item.dienapbus}</td>
-        <td scope="col">Stop: ${item.dieukhienbientan.Stop}, Rev: ${item.dieukhienbientan.rev}</td>
         <td scope="col">${item.dongdienbientan}</td>
+        <td scope="col">${item.Start}</td>
+        <td scope="col">${item.Stop}</td>
         <td scope="col">${item.for}</td>
         <td scope="col">${item.rev}</td>
-        <td scope="col">${item.trangthai}</td>
         <td scope="col">${toDateTime(item.time)}</td>
       </tr>
     `
