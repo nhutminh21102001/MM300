@@ -1,14 +1,14 @@
 const MAX_COLUMN_SHOW = 15
 
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyBYgGuPlBm0mPVJt3SqOfhNBZUd_wbb2N0",
-  authDomain: "mm300-2df21.firebaseapp.com",
-  databaseURL: "https://mm300-2df21-default-rtdb.firebaseio.com",
-  projectId: "mm300-2df21",
-  storageBucket: "mm300-2df21.appspot.com",
-  messagingSenderId: "162320643708",
-  appId: "1:162320643708:web:f82e81bd20743b553abbf9",
-  measurementId: "G-KVW1G8KHL9"
+  apiKey: "AIzaSyDjfqKtzcnRMExnGSP_8j-wzaOkhAL55_Q",
+  authDomain: "esp32-mx2.firebaseapp.com",
+  databaseURL: "https://esp32-mx2-default-rtdb.firebaseio.com",
+  projectId: "esp32-mx2",
+  storageBucket: "esp32-mx2.appspot.com",
+  messagingSenderId: "273854976046",
+  appId: "1:273854976046:web:0914d0125eed13563ecfbf",
+  measurementId: "G-LBX7H74CQL"
 }
 
 firebase.initializeApp(FIREBASE_CONFIG);
@@ -46,23 +46,19 @@ firestore.collection("data")
       tbodyContent += `
       <tr>
         <th scope="row">${index + 1}</th>
-        <td scope="col">${item.Vab}</td>
-        <td scope="col">${item.Van}</td> 
-        <td scope="col">${item.Vaux}</td>
-        <td scope="col">${item.Ia}</td>
-        <td scope="col">${item.Ib}</td>
-        <td scope="col">${item.Ic}</td>
-        <td scope="col">${item.Iavg}</td>
-        <td scope="col">${item.ApparentPower}</td>
-        <td scope="col">${item.Powerfactor}</td>
-        <td scope="col">${item.Realpower}</td>
-        <td scope="col">${item.Motorload}</td>
-        <td scope="col">${item.line}</td>
-        <td scope="col">${item.thermal}</td>
-        <td scope="col">${item['tan so']}</td>
+        <td scope="col">${item.AutoManual}</td>
+        <td scope="col">${item.GTTS}</td> 
+        <td scope="col">${item.GiamToc}</td>
+        <td scope="col">${item.GiatriTanSo}</td>
         <td scope="col">${item.Start}</td>
         <td scope="col">${item.Stop}</td>
-        <td scope="col">${item.AutoManual}</td>   
+        <td scope="col">${item.TangToc}</td>
+        <td scope="col">${item.dienapbientan}</td>
+        <td scope="col">${item.dienapbus}</td>
+        <td scope="col">Stop: ${item.dieukhienbientan.Stop}, Rev: ${item.dieukhienbientan.rev}</td>
+        <td scope="col">${item.dongdienbientan}</td>
+        <td scope="col">${item.for}</td>
+        <td scope="col">${item.rev}</td>
         <td scope="col">${item.trangthai}</td>
         <td scope="col">${toDateTime(item.time)}</td>
       </tr>
